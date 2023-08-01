@@ -20,7 +20,7 @@
       </div>
     </div>
     <div class="navbar-nav ml-auto">
-      <% if(locals.currentUser) {%>
+      <% if(locals.currentUser) {%> <% console.log(currentUser) %>
       <a class="nav-link" href="#"><%= currentUser.username %></a>
       <a class="nav-link" href="/logout">Logout</a>
       <% } else {%>
