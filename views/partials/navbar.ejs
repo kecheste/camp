@@ -20,12 +20,12 @@
       </div>
     </div>
     <div class="navbar-nav ml-auto">
-      <% if(!locals.currentUser) {%>
-      <a class="nav-link" href="/login">Login</a>
-      <a class="nav-link" href="/register">Register</a>
-      <% } else {%>
+      <% if(locals.currentUser) {%>
       <a class="nav-link" href="#"><%= currentUser.username %></a>
       <a class="nav-link" href="/logout">Logout</a>
+      <% } else {%>
+      <a class="nav-link" href="/login">Login</a>
+      <a class="nav-link" href="/register">Register</a>
       <% } %>
     </div>
   </div>
