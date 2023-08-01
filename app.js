@@ -44,14 +44,16 @@ db.once("open", () => {
   console.log("Mongo connection established!!");
 });
 
+const secret = process.env.SECRET;
+
 const sessionConfig = {
   store: MongoDBStore.create({
     mongoUrl: dbUrl,
-    secret: "thisismysecret",
+    secret,
     touchAfter: 24 * 60 * 60,
   }),
   name: "session",
-  secret: "thisismysecret",
+  secret,
   resave: false,
   saveUninitialized: true,
   cookie: {
